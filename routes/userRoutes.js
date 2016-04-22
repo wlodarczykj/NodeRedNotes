@@ -19,22 +19,7 @@ router.post('/', function (req, res){
   res.sendStatus(200);
 });
 
-router.param('id', function(req, res, next, id){
-  var query = User.findOne({"_id" : id});
-  query.exec(function(err, user){
-    if(err){
-      res.sendStatus(500);
-    }
-    req.user = user;
-    next();
-  });
-});
-
-router.delete('/:id', function (req, res, next){
-  req.user.delete();
-  res.send(req.user);
-});
-
+//UPDATE
 router.put('/', function(req, res, next){
   var updatedUser = req.body;
   if(updatedUser.id){
@@ -53,6 +38,25 @@ router.put('/', function(req, res, next){
   }
 });
 
+//Delete and Read initial step.
+router.param('id', function(req, res, next, id){
+  var query = User.findOne({"_id" : id});
+  query.exec(function(err, user){
+    if(err){
+      res.sendStatus(500);
+    }
+    req.user = user;
+    next();
+  });
+});
+
+//DELETE
+router.delete('/:id', function (req, res, next){
+  req.user.delete();
+  res.send(req.user);
+});
+
+//FIND
 router.get('/:id', function(req, res, next){
   console.log(req.user);
   res.send(req.user);
