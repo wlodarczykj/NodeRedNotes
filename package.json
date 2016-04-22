@@ -1,0 +1,26 @@
+{
+  "name": "noderednotes",
+  "version": "1.0.0",
+  "description": "Simple MEAN Stack Blog site",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wlodarczykj/NodeRedNotes.git"
+  },
+  "author": "Jakub Wlodarczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wlodarczykj/NodeRedNotes/issues"
+  },
+  "homepage": "https://github.com/wlodarczykj/NodeRedNotes#readme"
+}

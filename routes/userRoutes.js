@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/users.js')
 var mongoose = require('mongoose');
+var crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    password = 'TempPass';
 
 // Placeholder for Info page
 //#TODO Need to add a view here.
@@ -11,6 +14,8 @@ router.get('/', function(req, res) {
 
 //#TODO Add error handling.
 router.post('/', function (req, res){
+  var unsafePass = req.body.password;
+
   var newUser = new User({
     name: req.body.name,
     password: req.body.password
