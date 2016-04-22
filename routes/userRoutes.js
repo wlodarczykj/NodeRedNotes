@@ -9,13 +9,11 @@ var crypto = require('crypto'),
 // Placeholder for Info page
 //#TODO Need to add a view here.
 router.get('/', function(req, res) {
-  res.send('Users API');
+  res.sendFile('views/userAPI.html', {root: "./"});
 });
 
 //#TODO Add error handling.
 router.post('/', function (req, res){
-  var unsafePass = req.body.password;
-
   var newUser = new User({
     name: req.body.name,
     password: req.body.password
