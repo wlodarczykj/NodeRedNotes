@@ -16,6 +16,10 @@ mongoose.connect('mongodb://192.168.1.220/reddb');
 //Set the routes
 app.use('/user', userRoutes);
 
+app.get('/', function(req, res) {
+  res.sendStatus(200);
+});
+
 app.listen(80, function () {
   console.log('Listening on port 80!');
 });
