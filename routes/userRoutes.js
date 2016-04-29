@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/users.js')
 var mongoose = require('mongoose');
-var crypto = require('crypto'),
-    algorithm = 'aes-256-ctr',
-    password = 'TempPass';
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 // Placeholder for Info page
 //#TODO Need to add a view here.
@@ -14,12 +13,16 @@ router.get('/', function(req, res) {
 
 //#TODO Add error handling.
 router.post('/', function (req, res){
-  var newUser = new User({
-    name: req.body.name,
-    password: req.body.password
-  })
-  newUser.save();
-  res.sendStatus(200);
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+      bcrypt.hash(req.body.password, salt, function(err, hash) {
+        var newUser = new User({
+          name: req.body.name,
+          password: hash
+        })
+        newUser.save();
+        res.sendStatus(200);
+      });
+  });
 });
 
 //UPDATE

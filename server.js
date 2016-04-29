@@ -17,7 +17,7 @@ mongoose.connect('mongodb://192.168.1.220/reddb');
 app.use('/user', userRoutes);
 
 app.get('/', function(req, res) {
-  res.sendStatus(200);
+  res.sendFile('views/login.html', {root: "./"});
 });
 
 app.listen(80, function () {
