@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <title>User Login</title>
 </head>
 
@@ -15,36 +16,32 @@
               <legend>Login</legend>
 
               <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Email">
+              <input id="loginEmail" type="email" placeholder="Email">
 
               <label for="password">Password</label>
-              <input id="password" type="password" placeholder="Password">
+              <input id="loginPassword" type="password" placeholder="Password">
 
-              <label for="remember" class="pure-checkbox">
-                  <input id="remember" type="checkbox"> Remember me
-              </label>
-
-              <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+              <button id="loginButton" class="pure-button pure-button-primary">Sign in</button>
           </fieldset>
       </form>
-      <form class="pure-form pure-form-stacked" style="float: left; padding:13px 13px 13px 13px;">
+      <form id="registerForm" class="pure-form pure-form-stacked" style="float: left; padding:13px 13px 13px 13px;">
           <fieldset>
               <legend>Register</legend>
 
               <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Email">
+              <input id="registerEmail" type="email" placeholder="Email">
 
               <label for="password">Password</label>
-              <input id="password" type="password" placeholder="Password">
+              <input id="registerPassword" type="password" placeholder="Password">
 
               <label for="verifyPassword">Verify Password</label>
               <input id="verifyPassword" type="password" placeholder="Verify Password">
 
-              <button type="submit" class="pure-button pure-button-primary">Register</button>
+              <button id="registerButton" class="pure-button pure-button-primary">Register</button>
           </fieldset>
       </form>
     </div>
   </div>
-
+  <script src="/scripts/login.js"></script>
 </body>
 </html>
