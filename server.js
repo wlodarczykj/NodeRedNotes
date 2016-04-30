@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
   res.sendFile('views/login.html', {root: "./"});
 });
 
+app.get('/scripts/login.js', function(req, res) {
+  res.sendFile('views/scripts/login.js', {root: "./"});
+});
+
 app.listen(80, function () {
   console.log('Listening on port 80!');
 });
