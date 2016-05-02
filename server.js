@@ -22,6 +22,10 @@ app.get('/', function(req, res) {
   res.sendFile('views/login.html', {root: "./"});
 });
 
+app.get('/favicon.ico', function(req, res){
+  res.sendFile('/favicon.ico', {root: "./"});
+})
+
 app.get('/scripts/login.js', function(req, res) {
   res.sendFile('views/scripts/login.js', {root: "./"});
 });
